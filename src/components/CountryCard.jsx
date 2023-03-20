@@ -5,8 +5,13 @@ const CountryCard = (props) => {
   const numWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+  // const country = props.country;
+
+  const onClickHandler = () => {
+    props.onSelection(props.country);
+  };
   return (
-    <CardContainer>
+    <CardContainer onClick={onClickHandler}>
       <img src={props.flags.svg} alt="country flag" />
       <CardTextWrap>
         <h4>{props.name}</h4>

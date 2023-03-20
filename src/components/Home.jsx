@@ -10,14 +10,21 @@ import downArrow from "../assets/chevron-down-sharp.svg";
 import data from "../data.json";
 import CountryCard from "./CountryCard";
 
-const Home = () => {
+const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const onClickHandler = () => {
     setIsOpen(!isOpen);
   };
 
   const createCountryCard = (info) => {
-    return <CountryCard key={info.alpha2Code} {...info} />;
+    return (
+      <CountryCard
+        key={info.alpha2Code}
+        {...info}
+        country={info}
+        onSelection={props.onSelection}
+      />
+    );
   };
   return (
     <HomeContainer>
