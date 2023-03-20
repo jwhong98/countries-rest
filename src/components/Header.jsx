@@ -1,6 +1,6 @@
 import React from "react";
-import { HeaderContainer, ModeSelector } from "../styles/Header.styled";
-import moon from "../../assets/moon-outline.svg";
+import { HeaderContainer, ModeSelector } from "./styles/Header.styled";
+import moon from "../assets/moon-outline.svg";
 
 const Header = (props) => {
   const onClickHandler = () => {
