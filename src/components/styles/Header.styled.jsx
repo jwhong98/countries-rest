@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 5%;
   font-size: 14px;
   box-shadow: 0px 3px 3px ${({ theme }) => theme.colors.shadow};
   background: ${({ theme }) => theme.colors.elements};
@@ -14,6 +14,12 @@ export const HeaderContainer = styled.header`
 
   h1 {
     font-size: 1em;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    h1 {
+      font-size: 30px;
+    }
   }
 `;
 
@@ -26,5 +32,9 @@ export const ModeSelector = styled.div`
   }
   img {
     width: 1.1em;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    font-size: 20px;
   }
 `;

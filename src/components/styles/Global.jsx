@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-        --boxShadow: 0px 0px 10px 5px ${({ theme }) => theme.colors.shadow};
+        --boxShadow: 0px 0px 10px ${({ theme }) => theme.colors.shadow};
     }
 
     body {

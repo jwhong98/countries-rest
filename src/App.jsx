@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyles />
-        <Header onThemeSwitch={onThemeSwitch} />
+        <Header onThemeSwitch={onThemeSwitch} theme={theme} />
         <Main />
       </div>
     </ThemeProvider>

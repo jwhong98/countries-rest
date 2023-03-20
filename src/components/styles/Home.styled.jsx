@@ -29,6 +29,17 @@ export const SearchWrap = styled.div`
       color: ${({ theme }) => theme.colors.input};
     }
   }
+
+  @media only screen and (min-width: 1000px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 40px;
+
+    input {
+      width: 600px;
+    }
+  }
 `;
 
 export const Filter = styled.div`
@@ -73,4 +84,9 @@ export const HomeGrid = styled.section`
   padding: 40px;
   grid-template-columns: 1fr;
   gap: 40px;
+
+  @media only screen and (min-width: 1000px) {
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
