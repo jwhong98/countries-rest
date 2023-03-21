@@ -7,68 +7,82 @@ import {
   ContentContainer,
   CountryDetailContainer,
   DetailList,
+  Name,
   Details,
   DetailText,
   ImgContainer,
 } from "./styles/CountryDetail.styled";
+import backIcon from "../assets/arrow-back.svg";
+import { numWithCommas, stringList } from "../modules/Format";
 
 const CountryDetail = (props) => {
+  console.log(props.country.currencies);
   const createBadge = (border) => {
-    return <Badge />;
+    return <Badge>{border}</Badge>;
+  };
+  const createCurrencyItem = (info) => {
+    return <span>{info.name}</span>;
   };
   return (
     <CountryDetailContainer>
-      <BackBtn>Back</BackBtn>
+      <BackBtn onClick={props.onBack}>
+        <img src={backIcon} alt="" />
+        Back
+      </BackBtn>
       <ContentContainer>
         <ImgContainer>
-          <img src={props.flags.svg} alt="country flag" />
+          <img src={props.country.flags.svg} alt="country flag" />
         </ImgContainer>
         <Details>
-          <h2>{props.name}</h2>
+          <h2>{props.country.name}</h2>
           <DetailText>
             <DetailList>
               <li>
-                <span>Native Name: </span>
-                {props.nativeName}
+                <Name>Native Name: </Name>
+                {props.country.nativeName}
               </li>
               <li>
-                <span>Population: </span>
-                {props.population}
+                <Name>Population: </Name>
+                {numWithCommas(props.country.population)}
               </li>
               <li>
-                <span>Region: </span>
-                {props.region}
+                <Name>Region: </Name>
+                {props.country.region}
               </li>
               <li>
-                <span>Sub Region: </span>
-                {props.subregion}
+                <Name>Sub Region: </Name>
+                {props.country.subregion}
               </li>
               <li>
-                <span>Capital: </span>
-                {props.capital}
+                <Name>Capital: </Name>
+                {props.country.capital}
               </li>
             </DetailList>
             <DetailList>
               <li>
-                <span>Top Level Domain: </span>
-                {props.topLevelDomain}
+                <Name>Top Level Domain: </Name>
+                {props.country.topLevelDomain}
               </li>
               <li>
                 {/* array */}
-                <span>Currencies: </span>
-                {props.currencies}
+                <Name>Currencies: </Name>
+                {props.country.currencies.map(createCurrencyItem)}
               </li>
               <li>
                 {/* array */}
-                <span>Languages: </span>
-                {props.languages}
+                <Name>Languages: </Name>
+                {stringList(props.country.languages)}
               </li>
             </DetailList>
           </DetailText>
-          <Borders>
-            <span>Border Countries</span>
-            <BadgeContainer>{props.borders.map(createBadge)}</BadgeContainer>
-          </Borders>
+          {props.country.borders && (
+            <Borders>
+              <span>Border Countries:</span>
+              <BadgeContainer>
+                {props.country.borders.map(createBadge)}
+              </BadgeContainer>
+            </Borders>
+          )}
         </Details>
       </ContentContainer>
     </CountryDetailContainer>

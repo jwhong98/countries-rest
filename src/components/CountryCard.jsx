@@ -1,12 +1,8 @@
 import React from "react";
 import { CardContainer, CardTextWrap } from "./styles/CountryCard.styled";
+import { numWithCommas } from "../modules/Format";
 
 const CountryCard = (props) => {
-  const numWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-  // const country = props.country;
-
   const onClickHandler = () => {
     props.onSelection(props.country);
   };
