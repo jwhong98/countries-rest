@@ -59,8 +59,12 @@ export const Filter = styled.div`
     justify-content: space-between;
   }
 
-  img {
+  svg {
     width: 14px;
+
+    path {
+      stroke: ${({ theme }) => theme.colors.text};
+    }
   }
 `;
 

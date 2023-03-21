@@ -32,7 +32,22 @@ const Home = (props) => {
         <input type="text" placeholder="Search for a country..." />
         <Filter>
           <span onClick={onClickHandler}>
-            Filter by Region <img src={downArrow} alt="" />
+            Filter by Region{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Chevron Down</title>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="square"
+                stroke-miterlimit="10"
+                stroke-width="48"
+                d="M112 184l144 144 144-144"
+              />
+            </svg>
           </span>
           {isOpen && (
             <FilterList>

@@ -6,6 +6,7 @@ export const light = {
     text: "hsl(200, 15%, 8%)",
     shadow: "#efefef",
     input: "hsl(0, 0%, 52%)",
+    fill: "hsl(0, 0%, 100%)",
   },
 };
 
@@ -17,5 +18,6 @@ export const dark = {
     text: "hsl(0, 0%, 100%)",
     shadow: "#1E2B34",
     input: "hsl(0, 0%, 100%)",
+    fill: "hsl(0, 0%, 100%)",
   },
 };

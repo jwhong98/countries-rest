@@ -10,7 +10,7 @@ export const CountryDetailContainer = styled.section`
 export const BackBtn = styled.button`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   padding: 5px 20px;
   background: ${({ theme }) => theme.colors.elements};
   outline: none;
@@ -20,8 +20,13 @@ export const BackBtn = styled.button`
   margin-bottom: 60px;
   color: inherit;
   cursor: pointer;
-  img {
+
+  svg {
     width: 20px;
+
+    path {
+      stroke: ${({ theme }) => theme.colors.text};
+    }
   }
 `;
 

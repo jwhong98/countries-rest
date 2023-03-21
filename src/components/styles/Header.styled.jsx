@@ -30,8 +30,13 @@ export const ModeSelector = styled.div`
   :hover {
     cursor: pointer;
   }
-  img {
+  svg {
     width: 1.1em;
+
+    path {
+      stroke: ${({ theme }) => theme.colors.text};
+      fill: ${({ theme }) => theme.colors.fill};
+    }
   }
 
   @media only screen and (min-width: 1000px) {
