@@ -24,6 +24,7 @@ export const SearchWrap = styled.div`
     background-image: url(${search}) no-repeat;
     background-size: 17px 17px;
     background-position: left 30px center;
+    color: ${({ theme }) => theme.colors.input};
 
     ::placeholder {
       color: ${({ theme }) => theme.colors.input};
