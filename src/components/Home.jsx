@@ -11,15 +11,17 @@ import CountryCard from "./CountryCard";
 
 const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("Filter by Region");
   const [query, setQuery] = useState("");
   const [countries, setCountries] = useState(data);
 
   useEffect(() => {
     setCountries(
       data.filter((country) => {
-        if (filter) {
+        if (filter != "Filter by Region") {
           return country.region === filter;
+        } else if (query) {
+          return country.name.toLowerCase().includes(query.toLocaleLowerCase());
         } else {
           return country;
         }
@@ -63,9 +65,9 @@ const Home = (props) => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Filter>
-          <span onClick={onClickHandler}>
-            Filter by Region{" "}
+        <Filter onClick={onClickHandler}>
+          <span>
+            {filter}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="ionicon"

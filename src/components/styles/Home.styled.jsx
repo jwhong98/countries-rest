@@ -79,9 +79,18 @@ export const FilterList = styled.ul`
   padding: inherit;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   border-radius: inherit;
   box-shadow: inherit;
+
+  li {
+    height: 25px;
+    display: flex;
+    align-items: center;
+
+    :hover {
+      font-weight: 600;
+    }
+  }
 `;
 
 export const HomeGrid = styled.section`
